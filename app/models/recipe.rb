@@ -1,15 +1,17 @@
 class Recipe < ApplicationRecord
 
-    has_many :ingredients
-    has_many :instructions
-
+    has_many :ingredients, dependent: :destroy
     accepts_nested_attributes_for :ingredients,
-                                  reject_if: :all_blank,
-                                   allow_destroy: true
-
-    accepts_nested_attributes_for :instructions,
-                                   reject_if: proc { |attributes|['step'].blank?},
+                                    reject_if: proc { |attributes| attributes['name'].blank? },
                                     allow_destroy: true
+
+
+    
+    has_many :instructions, dependent: :destroy
+    accepts_nested_attributes_for :instructions,
+                                    reject_if: proc { |attributes| attributes['step'].blank? },
+                                    allow_destroy: true
+
 
 
     validates :title, :description, :image, presence:true
