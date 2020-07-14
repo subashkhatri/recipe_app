@@ -1,0 +1,13 @@
+%h1 Welcome to Your Recipe Index 
+- @recipes.each_slice(3) do |recipe|
+    .row
+        - recipe.each do |rec|
+            .col-md-4
+                .recipe
+                    .image_wrapper
+                        = link_to rec do 
+                            = image_tag rec.image.url(:medium)
+                    %h2= link_to rec.title, rec
+
+
+   
