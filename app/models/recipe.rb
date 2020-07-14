@@ -1,13 +1,13 @@
 class Recipe < ApplicationRecord
 
-    has_many :ingredients, dependent: :destroy
+    has_many :ingredients, dependent: :destroy, inverse_of: :recipe
     accepts_nested_attributes_for :ingredients,
                                     reject_if: proc { |attributes| attributes['name'].blank? },
                                     allow_destroy: true
 
 
     
-    has_many :instructions, dependent: :destroy
+    has_many :instructions, dependent: :destroy, inverse_of: :recipe
     accepts_nested_attributes_for :instructions,
                                     reject_if: proc { |attributes| attributes['step'].blank? },
                                     allow_destroy: true

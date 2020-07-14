@@ -93,7 +93,7 @@ body {
 	margin-bottom: 50px;
 }
 
-#recipe_info, #ingredients, #directions {
+#recipe_info, #ingredients, #instructions{
 	background: white;
 	@include box-shadow;
 	min-height: 360px;
@@ -119,7 +119,7 @@ body {
 	}
 }
 
-#ingredients, #directions {
+#ingredients, #instructions {
 	margin-bottom: 50px;
 	ul, ol {
 		padding-left: 18px;
