@@ -18,6 +18,8 @@ gem 'puma', '~> 4.1'
 gem 'bootstrap-sass', '~> 3.4.1'
 
 gem "paperclip", "~> 6.0.0"
+
+gem "cocoon"
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
