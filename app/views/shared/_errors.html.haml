@@ -1,0 +1,14 @@
+- if obj.errors.any?
+  .row
+    .col-xs-8{:style => "margin-left: 15%; "}
+      .card
+        .card-body{:style => "background-color: rgb(152, 190, 250);"}
+          %h2.card-title{:style => "color:red;"}
+            = pluralize(obj.errors.count, "error")
+            prohibited this from being saved:
+          .card-body{:style => "color:red;"}
+            %ul
+              - obj.errors.full_messages.each do |msg|
+                %li
+                  = msg
+              %ul

@@ -15,7 +15,9 @@ class Recipe < ApplicationRecord
 
 
 
-    validates :title, :description, :image, presence:true
+    validates :title, presence: true, length: { minimum: 3, maximum: 50 }
+    validates :description, presence: true, length: { minimum: 3, maximum: 50 }
+    validates :user_id, presence: true
     
     has_attached_file :image, styles: { medium: "400x400#" }
     validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/

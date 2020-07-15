@@ -145,3 +145,29 @@ body {
 .add-button {
 	margin-top: 25px;
 }
+.footer{
+	margin-top: 45px;
+	padding-top: 5px;
+	border-top: 1px solid #eaeaea ;
+	color: #DB6161;
+}
+footer a:hover{
+	color: #222;
+
+}
+footer small{
+	float:left;	
+}
+.footer-recipe{
+	color: #DB6161;
+	font-size: medium;
+}
+footer ul{
+	float: right;
+	
+	list-style: none;
+}
+footer ul li{
+ float: left; 
+ margin-left: 10px;
+}

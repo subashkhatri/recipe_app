@@ -20,8 +20,9 @@
           %li= link_to "Sign Up", new_user_registration_path
           %li= link_to "Sign In", new_user_session_path
 
-
+  
   .container
-    - flash.each do |name, msg|
-      = content_tag :div, msg, class: "alert"
+    = render "layouts/messages"
+    
     = yield
+  = render 'layouts/footer'  
