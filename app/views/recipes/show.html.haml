@@ -1,8 +1,33 @@
-= image_tag @recipe.image.url(:medium, class: "recipe_image")
-%h1= @recipe.title
+.main_content
+	#recipe_top.row
+		.col-md-4
+			= image_tag @recipe.image.url(:medium), class: "recipe_image"
+		.col-md-8
+			#recipe_info
+				%h1= @recipe.title
+				%p.description= @recipe.description
+				%p
+					Submitted by
+					= @recipe.user.email
 
-%p= @recipe.description
+	.row
+		.col-md-6
+			#ingredients
+				%h2 Ingredients
+				%ul
+					- @recipe.ingredients.each do |ingredient|
+						%li= ingredient.name
 
-= link_to "Back", root_path, class: "btn btn-default"
-= link_to "Edit", edit_recipe_path, class: "btn btn-success"
-= link_to "Delete", recipe_path, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" 
+		.col-md-6
+			#instructions
+				%h2 Instructions
+				%ul
+					- @recipe.instructions.each do |instruction|
+						%li= instruction.step
+
+	.row
+		.col-md-12
+			= link_to "Back", root_path, class: "btn btn-info"
+			- if user_signed_in?
+				= link_to "Edit", edit_recipe_path, class: "btn btn-primary"
+				= link_to "Delete", recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-danger"
