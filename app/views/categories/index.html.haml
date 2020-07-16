@@ -1,0 +1,13 @@
+%br/
+= link_to "Add Category", new_category_path, class: "btn btn-lg btn-warning"       
+%h1 Listing all categories
+- @categories.each_slice(3) do |category|
+    .row
+        - category.each do |cat|
+            .col-md-4
+                .recipe
+                    .image_wrapper
+                    %h2= link_to cat.name, cat
+
+
+   
