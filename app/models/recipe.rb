@@ -1,4 +1,5 @@
 class Recipe < ApplicationRecord
+    self.per_page = 1
     belongs_to :user
     has_many :recipe_categories
     has_many :categories, through: :recipe_categories 
