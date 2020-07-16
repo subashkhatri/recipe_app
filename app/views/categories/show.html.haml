@@ -1,0 +1,11 @@
+.main_content
+	#recipe_top.row
+		.col-md-8
+			#recipe_info
+				%h1= @category.name
+				%p.description= @category.created_at
+				%p.description= @category.updated_at		
+	.row
+		.col-md-12
+			= link_to "Back", root_path, class: "btn btn-info"
+			= link_to "Edit", edit_category_path, class: "btn btn-primary"
