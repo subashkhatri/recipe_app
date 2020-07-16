@@ -6,6 +6,9 @@
 			#recipe_info
 				%h1= @recipe.title
 				%p.description= @recipe.description
+				- if @recipe.categories.any?
+					%p Categories: 
+					= render @recipe.categories
 				%p
 					Submitted by
 					= @recipe.user.email
