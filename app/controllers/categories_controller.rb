@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :find_category, only: [:show, :edit, :update]
+  before_action :require_admin, except: [:index, :show]
   def index
     @categories = Category.all.order("created_At DESC")
   end
@@ -35,5 +36,11 @@ class CategoriesController < ApplicationController
 
   def find_category
       @category = Category.find(params[:id])
+  end
+  def require_admin 
+    if !user_signed_in? || (user_signed_in? and !current_user.admin?)
+      flash[:danger] = "Only admins are allowed to perform this action"
+      redirect_to categories_path
+    end
   end
 end
