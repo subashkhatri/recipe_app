@@ -29,5 +29,6 @@
     .btn-group
     - Category.all.each do |category|
       %button= link_to "#{category.name}", category_path(category), class:"btn btn-lg"   
+      
     = yield
   = render 'layouts/footer'  

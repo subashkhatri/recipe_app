@@ -8,6 +8,9 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 
+gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap'
+
 gem "haml-rails", "~> 2.0"
 
 gem 'simple_form'
