@@ -3,9 +3,17 @@
 		.col-md-8
 			#recipe_info
 				%h1= @category.name
-				%p.description= @category.created_at
-				%p.description= @category.updated_at		
+				- @category_recipes.each_slice(2) do |recipe|
+					.row
+						- recipe.each do |rec|
+							.col-md-4
+								.recipe
+									.image_wrapper
+										= link_to rec do 
+											=image_tag rec.image.url(:medium)
+									%h2= link_to rec.title, rec 		
 	.row
 		.col-md-12
+		- if user_signed_in? && current_user.admin? 
 			= link_to "Back", root_path, class: "btn btn-info"
 			= link_to "Edit", edit_category_path, class: "btn btn-primary"
