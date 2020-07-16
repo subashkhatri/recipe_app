@@ -9,6 +9,7 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 gem 'sqlite3', '~> 1.4'
 
 gem 'will_paginate', '~> 3.1.0'
+
 gem 'will_paginate-bootstrap'
 
 gem "haml-rails", "~> 2.0"
@@ -25,11 +26,6 @@ gem "paperclip", "~> 6.0.0"
 gem "cocoon"
 
 gem 'devise'
-
-gem 'will_paginate', '~> 3.1.0'
-
-gem 'will_paginate-bootstrap'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -56,6 +52,8 @@ end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
+  gem 'pry-rails', '~> 0.3.4'
+
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
