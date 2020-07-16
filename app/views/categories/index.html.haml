@@ -1,6 +1,7 @@
 %br/
 = link_to "Add Category", new_category_path, class: "btn btn-lg btn-warning"       
 %h1 Listing all categories
+= will_paginate @recipies, renderer: BootstrapPagination::Rails
 - @categories.each_slice(3) do |category|
     .row
         - category.each do |cat|
