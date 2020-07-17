@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :recipes
   has_many :comments
-         
+
   before_save { self.email = email.downcase }
   validates :email, presence: true, length: { maximum: 105 },
                     uniqueness: { case_sensitive: false }

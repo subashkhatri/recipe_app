@@ -10,72 +10,71 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_17_061433) do
-
-  create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+ActiveRecord::Schema.define(version: 20_200_717_061_433) do
+  create_table 'categories', force: :cascade do |t|
+    t.string 'name'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
-  create_table "comments", force: :cascade do |t|
-    t.string "comment"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "recipe_id", null: false
-    t.integer "user_id", null: false
-    t.index ["recipe_id"], name: "index_comments_on_recipe_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
+  create_table 'comments', force: :cascade do |t|
+    t.string 'comment'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.integer 'recipe_id', null: false
+    t.integer 'user_id', null: false
+    t.index ['recipe_id'], name: 'index_comments_on_recipe_id'
+    t.index ['user_id'], name: 'index_comments_on_user_id'
   end
 
-  create_table "ingredients", force: :cascade do |t|
-    t.string "name"
-    t.integer "recipe_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["recipe_id"], name: "index_ingredients_on_recipe_id"
+  create_table 'ingredients', force: :cascade do |t|
+    t.string 'name'
+    t.integer 'recipe_id', null: false
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['recipe_id'], name: 'index_ingredients_on_recipe_id'
   end
 
-  create_table "instructions", force: :cascade do |t|
-    t.text "step"
-    t.integer "recipe_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["recipe_id"], name: "index_instructions_on_recipe_id"
+  create_table 'instructions', force: :cascade do |t|
+    t.text 'step'
+    t.integer 'recipe_id', null: false
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['recipe_id'], name: 'index_instructions_on_recipe_id'
   end
 
-  create_table "recipe_categories", force: :cascade do |t|
-    t.integer "recipe_id"
-    t.integer "category_id"
+  create_table 'recipe_categories', force: :cascade do |t|
+    t.integer 'recipe_id'
+    t.integer 'category_id'
   end
 
-  create_table "recipes", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.integer "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "image_file_name"
-    t.string "image_content_type"
-    t.integer "image_file_size"
-    t.datetime "image_updated_at"
+  create_table 'recipes', force: :cascade do |t|
+    t.string 'title'
+    t.text 'description'
+    t.integer 'user_id'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.string 'image_file_name'
+    t.string 'image_content_type'
+    t.integer 'image_file_size'
+    t.datetime 'image_updated_at'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.boolean "admin", default: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  create_table 'users', force: :cascade do |t|
+    t.string 'email', default: '', null: false
+    t.string 'encrypted_password', default: '', null: false
+    t.string 'reset_password_token'
+    t.datetime 'reset_password_sent_at'
+    t.datetime 'remember_created_at'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.boolean 'admin', default: false
+    t.index ['email'], name: 'index_users_on_email', unique: true
+    t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end
 
-  add_foreign_key "comments", "recipes"
-  add_foreign_key "comments", "users"
-  add_foreign_key "ingredients", "recipes"
-  add_foreign_key "instructions", "recipes"
+  add_foreign_key 'comments', 'recipes'
+  add_foreign_key 'comments', 'users'
+  add_foreign_key 'ingredients', 'recipes'
+  add_foreign_key 'instructions', 'recipes'
 end

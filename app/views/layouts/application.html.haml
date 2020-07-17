@@ -11,6 +11,10 @@
   %nav.navbar.navbar-default
     .container  
       .navbar-brand= link_to "RMS", root_path
+      %ul.nav.navbar-nav.navbar-left
+        = form_tag search_recipes_path, class: "span5 for-search", method: "get" do
+          %input.search-query(name="search_term" type="text" placeholder="Search for recipe!")
+          %button.btn.btn-default(type="submit") Search
       - if user_signed_in?
         %ul.nav.navbar-nav.navbar-right
           %li= link_to "New Recipie", new_recipe_path
