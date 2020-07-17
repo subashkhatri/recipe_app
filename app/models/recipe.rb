@@ -1,6 +1,7 @@
 class Recipe < ApplicationRecord
     self.per_page = 1
     belongs_to :user
+    has_many :comments, dependent: :destroy, inverse_of: :recipe
     has_many :recipe_categories
     has_many :categories, through: :recipe_categories 
     
