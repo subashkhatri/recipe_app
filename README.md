@@ -44,11 +44,11 @@ Non-logged in users is able to see the recipe details.
   * devise
 
   #### references links of all the gems that i have used
-  ** https://github.com/mislav/will_paginate.git
-  ** https://rubygems.org/gems/will_paginate-bootstrap4/versions/0.2.2
-  ** https://github.com/haml/haml-rails
-  ** https://github.com/heartcombo/simple_form
-  ** https://github.com/twbs/bootstrap-sass
-  ** https://github.com/thoughtbot/paperclip
-  ** https://github.com/nathanvda/cocoon
-  ** https://github.com/heartcombo/devise
+  * https://github.com/mislav/will_paginate.git
+  * https://rubygems.org/gems/will_paginate-bootstrap4/versions/0.2.2
+  * https://github.com/haml/haml-rails
+  * https://github.com/heartcombo/simple_form
+  * https://github.com/twbs/bootstrap-sass
+  * https://github.com/thoughtbot/paperclip
+  * https://github.com/nathanvda/cocoon
+  * https://github.com/heartcombo/devise
