@@ -29,6 +29,14 @@
 						%li= instruction.step
 
 	.row
+	- if user_signed_in?
+		.col-md-6
+			= render 'comments/form'	
+		.col-md-5.col-sm-offset-1
+			%h2 All comments
+			= render 'comments/comment'
+	%br/		
+	.row
 		.col-md-12
 			= link_to "Back", root_path, class: "btn btn-info"
 			- if user_signed_in? && (current_user == @recipe.user || current_user.admin?) 
