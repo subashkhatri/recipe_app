@@ -1,0 +1,5 @@
+- @comments.each do |com| 
+  %h4= com.comment
+  %span= com.user.email
+  - if current_user == com.user || current_user.admin?
+    = link_to "Delete", recipe_comment_path(com.recipe_id, com.id), method: :delete, class: "btn btn-sm btn-danger"
