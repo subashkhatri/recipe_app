@@ -8,7 +8,7 @@ The rms contains a signin/ signup functionality. A logged in user can create a n
 
 Non-logged in users is able to see the recipe details. 
 
-### follow below instruction to start this project
+### Follow instruction run this project
 
 1. After the project is cloned we need to run bundle install
 ``` running bundle install```
@@ -66,7 +66,7 @@ Non-logged in users is able to see the recipe details.
     as to work for coccon in rails 5 + we need to ```add coccon-js``` in our application.js file
   ```devise```
 
-  #### references links of all the gems that i have used
+  #### References links of all the gems that i have used
   * https://github.com/mislav/will_paginate.git
   * https://rubygems.org/gems/will_paginate-bootstrap4/versions/0.2.2
   * https://github.com/haml/haml-rails
