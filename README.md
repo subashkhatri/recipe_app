@@ -8,6 +8,28 @@ The rms contains a signin/ signup functionality. A logged in user can create a n
 
 Non-logged in users is able to see the recipe details. 
 
+### follow below instruction to start this project
+
+1. After the project is cloned we need to run bundle install
+``` running bundle install```
+  $ bundle install
+2. After we run the bundle install, we need to run yarn install. As we have use javascript 
+``` running yarn install ```
+     $ yarn install
+3. As simple form is used is used so we need to run
+``` $ rails generate simple_form:install ```
+4.  connect the database 
+  ```run migration ```
+    $ rake db:migration
+5. for admin we need to change the boolean value of admin to true adter we create a user so to do that
+  * open terminal in project folder 
+  ``` $ rails console ```
+      $ User.all
+      $ user = User.find(1) // assume the first user as admin
+      $ user.admin = true
+      $ user.save
+  * After user is made admin, we can view the option to create categories, for normal user we can only view the          categories            
+
 ## Bonus Features 
 * A unit test and functional test is done for the category only.
 * Only admin can add categories
