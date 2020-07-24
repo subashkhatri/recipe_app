@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
   before_action :authenticate_user!, except: %i[index show search]
   before_action :require_same_user, only: %i[edit update destroy]
   def index
-    @recipes = Recipe.paginate(page: params[:page]).order('created_At DESC')
+    @recipes = Recipe.paginate(page: params[:page]).sort_by_popularity('DESC').order('created_At DESC')
   end
 
   def new
@@ -13,6 +13,7 @@ class RecipesController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @recipe.comments
+    @recipe.punch(request)
   end
 
   def create

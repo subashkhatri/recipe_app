@@ -4,7 +4,8 @@ class Recipe < ApplicationRecord
 
     where('title LIKE ?', "%#{search_term}%").order('created_at DESC')
   end
-  self.per_page = 3
+  acts_as_punchable
+  self.per_page = 6
   belongs_to :user
   has_many :comments, dependent: :destroy, inverse_of: :recipe
   has_many :recipe_categories
