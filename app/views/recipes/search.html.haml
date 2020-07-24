@@ -1,0 +1,14 @@
+%h1 Search Results!!
+= will_paginate @results, renderer: BootstrapPagination::Rails
+- @results.each_slice(3) do |result|
+    .row
+        - result.each do |rec|
+            .col-md-4
+                .recipe
+                    .image_wrapper
+                        = link_to rec do 
+                            = image_tag rec.image.url(:medium)
+                    %h2= link_to rec.title, rec
+
+
+   
