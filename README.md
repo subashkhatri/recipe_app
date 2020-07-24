@@ -56,16 +56,16 @@ Non-logged in users is able to see the recipe details.
 >>> ```rake test```
 
 * Gem Used for Recipe Management System
-  ```will_paginate '3.1.0'```
-  ```will_paginate-bootstrap```
-  ```haml-rails '2.0'```
-  ```simple_form```
-  ```bootstrap-sass '3.4.1'```
-  ```paperclip '6.0.0'```
-  ```coccon```
+ >>```will_paginate '3.1.0'```
+ >>```will_paginate-bootstrap```
+ >>```haml-rails '2.0'```
+ >>```simple_form```
+ >> ```bootstrap-sass '3.4.1'```
+ >>```paperclip '6.0.0'```
+ >>```coccon```
     as to work for coccon in rails 5 + we need to ```add coccon-js``` in our application.js file
-  ```devise```
-  ```punching_bag```
+ >> ```devise```
+ >>```punching_bag```
 
   #### References links of all the gems that i have used
   * https://github.com/mislav/will_paginate.git
