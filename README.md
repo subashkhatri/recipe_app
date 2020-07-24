@@ -12,58 +12,58 @@ Non-logged in users is able to see the recipe details.
 
 1. After the project is cloned we need to run bundle install
 ``` running bundle install```
-  $ bundle install
+  ````$ bundle install````
 2. After we run the bundle install, we need to run yarn install. As we have use javascript 
 ``` running yarn install ```
-     $ yarn install
+     ````$ yarn install````
 3. As simple form is used is used so we need to run
 ``` $ rails generate simple_form:install ```
 4.  connect the database 
   ```run migration ```
-    $ rake db:migration
+    ````$ rake db:migration````
 5. for admin we need to change the boolean value of admin to true adter we create a user so to do that
-  * open terminal in project folder 
+  >> open terminal in project folder 
   ``` $ rails console ```
-      $ User.all
-      $ user = User.find(1) // assume the first user as admin
-      $ user.admin = true
-      $ user.save
-  * After user is made admin, we can view the option to create categories, for normal user we can only view the          categories            
+      ````$ User.all````
+      ````$ user = User.find(1)```` // assume the first user as admin
+      ````$ user.admin = true````
+      ````$ user.save````
+  >> After user is made admin, we can view the option to create categories, for normal user we can only view the          categories            
 
 ## Bonus Features 
-* A unit test and functional test is done for the category only.
-* Only admin can add categories
-  * All the recipes are grouped by categories
-* As per the recipes number increases we need to divide the pages, pagination is used to show the recipe list - 3 recipes   per page
+> A unit test and functional test is done for the category only.
+> Only admin can add categories
+  >> All the recipes are grouped by categories
+> As per the recipes number increases we need to divide the pages, pagination is used to show the recipe list - 3 recipes   per page
 
 
 ### Technology used:
 
-* Ruby version
-  ruby '2.6.3
+> Ruby version
+>>  ```ruby '2.6.3```
 
-* Rails version
-  rails '6.0.3'  
+> Rails version
+>> ```rails '6.0.3'```  
 
-* System dependencies
-  ubuntu linux 18.04
+> System dependencies
+>>  ```ubuntu linux 18.04```
 
-* Database Used and its version
-  sqlite3 '1.4'
+> Database Used and its version
+>>  ```sqlite3 '1.4' ```
 
-* How to run the test suite
-  simply by typing 
-    rake test
-* Gem Used for Recipe Management System
-  * will_paginate '3.1.0'
-  * will_paginate-bootstrap
-  * haml-rails '2.0'
-  * simple_form
-  * bootstrap-sass '3.4.1'
-  * paperclip '6.0.0'
-  * coccon
-    as to work for coccon in rails 5 + we need to add coccon-js in our application.js file
-  * devise
+> How to run the test suite
+>>  simply by typing 
+>>> ```rake test```
+> Gem Used for Recipe Management System
+  >> ```will_paginate '3.1.0'```
+  >> ```will_paginate-bootstrap```
+  >> ```haml-rails '2.0'```
+  >> ```simple_form```
+  >> ```bootstrap-sass '3.4.1'```
+  >> ```paperclip '6.0.0'```
+  >> ```coccon```
+    as to work for coccon in rails 5 + we need to ```add coccon-js``` in our application.js file
+  >> ```devise```
 
   #### references links of all the gems that i have used
   * https://github.com/mislav/will_paginate.git
