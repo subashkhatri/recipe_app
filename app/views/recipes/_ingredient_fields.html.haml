@@ -2,4 +2,5 @@
 	.nested-fields
 		.field
 			= f.input :name, input_html: { class: 'form-input form-control' }
-			= link_to_remove_association 'Remove', f, class: 'form-button btn btn-default'
+			%br/
+			= link_to_remove_association 'Remove', f, class: 'form-button btn btn-danger'

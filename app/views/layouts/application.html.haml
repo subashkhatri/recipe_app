@@ -3,18 +3,20 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title TestApp
+    %link{:href => "https://fonts.googleapis.com/css2?family=Russo+One&display=swap", :rel => "stylesheet"}
+    %link{:href => "https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Russo+One&display=swap", :rel => "stylesheet"}/
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
   %nav.navbar.navbar-default
-    .container  
+    .main_content  
       .navbar-brand= link_to "RMS", root_path
       %ul.nav.navbar-nav.navbar-left
         = form_tag search_recipes_path, class: "span5 for-search", method: "get" do
           %input.search-query(name="search_term" type="text" placeholder="Search for recipe!")
-          %button.btn.btn-default(type="submit") Search
+          %button.btn.btn-success(type="submit") Search
       - if user_signed_in?
         %ul.nav.navbar-nav.navbar-right
           %li= link_to "New Recipie", new_recipe_path

@@ -16,24 +16,70 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
- @mixin box-shadow {
-	-webkit-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
-	-moz-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
-	box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+ :root{
+	--mainColor: #eaeaea;
+  --secondaryColor: #fff;
+
+  --borderColor: #c1c1c1;
+
+  --mainText:black;
+  --secondaryText: #4b5156;
+
+  --themeDotBorder: #24292e;
+
+  --previewBg: rgba(251, 249, 243, 0.8);
+
+  --previewShadow: #f0ead6;
+
+  --btnColor: #DB6161;
+ }
+
+ $red: #DB6161;
+
+ @mixin box-shadow {	
+  -webkit-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+  box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+}
+html, body{
+  padding: 0;
+  margin: 0;
+}
+h1, h2, h3, h4, h5, h6, strong{
+  color: var(--mainText);
+  font-family: 'Russo One', sans-serif;
+  font-weight: 500;
+
+}
+p, li, span, label, input, textarea{
+  color: var(--mainText);
+  font-family: 'Roboto Mono', monospace;
+}
+a{
+  text-decoration: none;
+  color: #17a2b8;
 }
 
-$red: #DB6161;
-
-body {
-	background: rgb(235, 238, 243);
+ul{
+  list-style: none;
 }
-h1 {
-	margin-left: 13%;
-	color: #DB6161;
+
+h1{ font-size: 56px;}
+h2{ font-size: 36px;}
+h3{ font-size: 28px;}
+h4{ font-size: 24px;}
+h5{ font-size: 20px;}
+h6{ font-size: 16px;}
+
+.nav{
+	background-color: var(--mainColor);
+	border-bottom: 1px solid var(--borderColor);
+	overflow: auto;
 }
 
 .main_content {
-	padding: 0 0 50px 0;
+	width: 1200px;
+  margin: 0 auto;
 }
 
 .alert {
@@ -47,9 +93,17 @@ h1 {
 }
 
 .navbar {
-	margin-bottom: 50px;
+	grid-area: navbar;
+  border-bottom: 1px solid var(--borderColor);
+  border-radius: 5px 5px 0 0;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--mainColor);
+	margin-top: 5px;
 	@include box-shadow;
-	border: none;
+	// border: none;
 	.navbar-brand {
 		text-transform: uppercase;
 		letter-spacing: -1px;
@@ -60,12 +114,29 @@ h1 {
 		}
 	}
 }
+
 .navbar-left{
-	margin-top: 5px;
-	margin-left: 10%;
+	margin: 0;
+	margin-left: 15%;
+  padding: 10px;
 }
+
+.navbar-nav a{
+	color: var(--mainText);
+}
+.navbar-nav li{
+	display: inline-block;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.container{
+	background-color: var(--secondaryColor);
+  border-bottom: 0px solid var(--borderColor);
+  overflow: auto;
+}
+
 .recipe {
-	background: white;
+	background: var(--mainColor);
 	border-radius: 5px;
 	margin-bottom: 40px;
 	@include box-shadow;
@@ -97,19 +168,29 @@ h1 {
 }
 
 #recipe_top {
+  border: 1.5px solid #17a2b8;
+  background-color: var(--previewBg);
+  padding: 15px;
+  
+	margin-top: 15px;
 	margin-bottom: 50px;
+	
 }
 
 #recipe_info, #ingredients, #instructions{
-	background: white;
+	background: var(--secondaryColor);
 	@include box-shadow;
 	min-height: 360px;
-	border-radius: 5px;
+	border-radius: 15px;
 	padding: 2em 8%;
+	
+	
 }
 
 .recipe_image {
 	max-width: 100%;
+	display: block;
+  object-fit: cover;
 	border-radius: 5px;
 	@include box-shadow;
 }
@@ -121,23 +202,25 @@ h1 {
 		color: $red;
 	}
 	.description {
-		color: #8A8A8A;
+		color: var(--secondaryText);
 		font-size: 20px;
 	}
 }
 
 #ingredients, #instructions {
+  justify-content: center;
+  padding-bottom: 50px;
 	margin-bottom: 50px;
 	ul, ol {
 		padding-left: 18px;
 		li {
 			padding: 1em 0;
-			border-bottom: 1px solid #EAEAEA;
+			border-bottom: 1px solid var(--borderColor);
 		}
 	}
 }
 .badge {
-	background-color: wheat;
+	background-color: var(--mainColor);
 	letter-spacing: -1px;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -146,13 +229,21 @@ h1 {
 	margin-top: 15px;
 }
 .form-input {
-	width: 65% !important;
-	float: left;
+	width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: var(--secondaryColor);
+  border-radius: 5px;
+  border: 1px solid var(--borderColor);
+	font-size: 14px;
+	
+	// width: 65% !important;
+	// float: left;
 }
 .form-button {
-	float: left;
 	width: 30% !important;
-	margin-left: 5%;
+	color: #fff;
+  border: none;
 }
 .add-button {
 	margin-top: 25px;
@@ -160,18 +251,18 @@ h1 {
 .footer{
 	margin-top: 45px;
 	padding-top: 5px;
-	border-top: 1px solid #eaeaea ;
-	color: #DB6161;
+	border-top: 1px solid var(--borderColor) ;
+	color: $red;
 }
 footer a:hover{
-	color: #222;
+	color: var(--themeDotBorder);
 
 }
 footer small{
 	float:left;	
 }
 .footer-recipe{
-	color: #DB6161;
+	color: $red;
 	font-size: medium;
 }
 footer ul{
@@ -182,4 +273,10 @@ footer ul{
 footer ul li{
  float: left; 
  margin-left: 10px;
+}
+
+@media screen and (max-width:1200px){
+  .main-container{
+    width: 95%;
+	}
 }

@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
     @recipe = Recipe.find(params[:recipe_id])
 
     @comment = @recipe.comments.create(comment_params)
-    redirect_to root_path if @comment.save
+    redirect_to @recipe if @comment.save
   end
 
   def destroy
