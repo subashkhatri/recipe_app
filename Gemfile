@@ -26,6 +26,8 @@ gem 'paperclip', '~> 6.0.0'
 gem 'cocoon'
 
 gem 'devise'
+
+gem "punching_bag"
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker

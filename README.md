@@ -3,7 +3,7 @@
 This RMS(recipe management system) has a home page that list all the recipes sorted by the dates, they are added. The most 
 recent shows first. The home page also contains a search bar where recipes can be searched by title or a word.
 A detail page of recipe includes the recipe image, its ingredient and the prepration process (instructions).
-
+The homepage also shows the list of top 5 recipes based on their popularity.
 The rms contains a signin/ signup functionality. A logged in user can create a new recipe, edit and delete the recipe that he has created. Only Admin user can delete the recipes that are created by other users. For admin user, we need to modify normal user from rails console by changing the value admin to true, as for other user the value of admin remains false(default). A logged in user can comment on a particular recipe.
 
 Non-logged in users is able to see the recipe details. 
@@ -65,6 +65,7 @@ Non-logged in users is able to see the recipe details.
   ```coccon```
     as to work for coccon in rails 5 + we need to ```add coccon-js``` in our application.js file
   ```devise```
+  ```punching_bag```
 
   #### References links of all the gems that i have used
   * https://github.com/mislav/will_paginate.git
@@ -75,3 +76,4 @@ Non-logged in users is able to see the recipe details.
   * https://github.com/thoughtbot/paperclip
   * https://github.com/nathanvda/cocoon
   * https://github.com/heartcombo/devise
+  * https://github.com/biola/punching_bag

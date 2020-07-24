@@ -1,6 +1,6 @@
 = render "layouts/categories"
 .main_content
-	#recipe_top.row
+	#recipe_top.row		
 		.col-md-4
 			= image_tag @recipe.image.url(:medium), class: "recipe_image"
 		.col-md-8
@@ -13,6 +13,9 @@
 				%p
 					Submitted by
 					= @recipe.user.email
+				%p
+					Views
+					= @recipe.hits(1.week.ago)	
 
 	.row
 		.col-md-6
