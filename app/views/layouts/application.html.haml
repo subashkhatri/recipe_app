@@ -31,10 +31,7 @@
 
   
   .container
-    = render "layouts/messages" 
-    .btn-group
-    - Category.all.each do |category|
-      %button= link_to "#{category.name}", category_path(category), class:"btn btn-lg"   
+    = render "layouts/messages"   
       
     = yield
   = render 'layouts/footer'  
