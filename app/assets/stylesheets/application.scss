@@ -17,21 +17,21 @@
  @import "bootstrap";
 
  :root{
-	--mainColor: #eaeaea;
-  --secondaryColor: #fff;
+	--mainColor: #15202B;
+  --secondaryColor: #192734;
 
-  --borderColor: #c1c1c1;
+  --borderColor: #164D56;
 
-  --mainText:black;
-  --secondaryText: #4b5156;
+  --mainText:#fff;
+  --secondaryText: #eeeeee;
 
-  --themeDotBorder: #24292e;
+  --themeDotBorder: #FFF;
 
-  --previewBg: rgba(251, 249, 243, 0.8);
+  --previewBg: rgba(25, 39, 52, 0.8);
 
-  --previewShadow: #f0ead6;
+  --previewShadow: #111921;
 
-  --btnColor: #DB6161;
+  --btnColor: #17a2b8;
  }
 
  $red: #DB6161;
@@ -64,11 +64,11 @@ ul{
   list-style: none;
 }
 
-h1{ font-size: 56px;}
-h2{ font-size: 36px;}
-h3{ font-size: 28px;}
-h4{ font-size: 24px;}
-h5{ font-size: 20px;}
+h1{ font-size: 46px;}
+h2{ font-size: 32px;}
+h3{ font-size: 26px;}
+h4{ font-size: 22px;}
+h5{ font-size: 18px;}
 h6{ font-size: 16px;}
 
 .nav{
@@ -78,7 +78,7 @@ h6{ font-size: 16px;}
 }
 
 .main_content {
-	width: 1200px;
+	width: 1100px;
   margin: 0 auto;
 }
 

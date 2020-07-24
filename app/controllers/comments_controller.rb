@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
     @recipe = Recipe.find(params[:recipe_id])
 
     @comment = @recipe.comments.create(comment_params)
+    flash[:success] = 'Commented Successfully !!'
     redirect_to @recipe if @comment.save
   end
 
@@ -10,7 +11,7 @@ class CommentsController < ApplicationController
     @recipe = Recipe.find(params[:recipe_id])
     @comment = Comment.find(params[:id])
     @comment.destroy
-    flash[:danger] = 'Recipe Successfully Deleted !!'
+    flash[:danger] = 'Comment Deleted !!'
     redirect_to @recipe
   end
 
