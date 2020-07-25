@@ -10,6 +10,35 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"}
+    :javascript
+      $(document).ready(function(){
+        $("#flip_ingredient").click(function(){
+          $("#panel_ingredient").slideToggle("slow");
+        });
+        $("#flip_instruction").click(function(){
+          $("#panel_instruction").slideToggle("slow");
+        });
+        $("#flip_comment").click(function(){
+          $("#panel_comment").slideToggle("slow");
+        });
+      });
+    :css
+      #panel_ingredient, #panel_instruction, #flip_ingredient, #flip_instruction {
+        padding: 5px;
+        text-align: center;        
+        border: solid 1px #165059;
+      }
+      
+      #panel_ingredient, #panel_instruction, #panel_comment {
+        padding: 50px;
+        display: none;
+      }
+      #panel_comment, #flip_comment{
+        padding: 10px;
+        text-align: center;
+        border: solid 1px #fff;   
+      }
+
   %body
   %nav.navbar.navbar-default
     .main_content  

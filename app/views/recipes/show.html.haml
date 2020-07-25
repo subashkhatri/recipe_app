@@ -15,20 +15,21 @@
 					= @recipe.user.email
 				%p
 					Total Views:
-					= @recipe.hits(1.week.ago)	
-
+					= @recipe.hits(1.week.ago)				
 	.row
 		.col-md-6
 			#ingredients
-				%h2 Ingredients
-				%ul
+				#flip_ingredient
+					%h2 Ingredients
+				%ul#panel_ingredient
 					- @recipe.ingredients.each do |ingredient|
 						%li= ingredient.name
 
 		.col-md-6
 			#instructions
-				%h2 Instructions
-				%ul
+				#flip_instruction
+					%h2 Instructions
+				%ul#panel_instruction
 					- @recipe.instructions.each do |instruction|
 						%li= instruction.step
 
@@ -37,7 +38,9 @@
 		.col-md-6
 			= render 'comments/form'	
 		.col-md-5.col-sm-offset-1
-			%h4 All comments
+			#flip_comment
+				%h4
+					%u All comments
 			%br/
 			= render 'comments/comment'
 	%br/		
