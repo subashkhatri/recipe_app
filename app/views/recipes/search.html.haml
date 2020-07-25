@@ -1,4 +1,6 @@
-%h1 Search Results!!
+.col-md-6.col-sm-offset-4
+    %h3 Search Results!!
+.col-md-6.col-sm-offset-4
 = will_paginate @results, renderer: BootstrapPagination::Rails
 - @results.each_slice(3) do |result|
     .row

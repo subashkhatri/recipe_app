@@ -4,6 +4,7 @@ class CategoryTest < ActiveSupport::TestCase
   def setup
     @category = Category.new(name: 'spicie')
   end
+
   test 'category should be valid' do
     assert @category.valid?
   end
@@ -13,9 +14,9 @@ class CategoryTest < ActiveSupport::TestCase
     assert_not @category.valid?
   end
 
-  test ' name should be unique' do
+  test 'name should be unique' do
     @category.save
-    category2 = Category.new(name: 'Spices')
+    category2 = Category.new(name: 'spicies')
     assert_not category2.valid?
   end
 
@@ -23,6 +24,7 @@ class CategoryTest < ActiveSupport::TestCase
     @category.name = 'a' * 26
     assert_not @category.valid?
   end
+
   test 'name should not be too short' do
     @category.name = 'aa'
     assert_not @category.valid?

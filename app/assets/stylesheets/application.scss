@@ -52,7 +52,7 @@ h1, h2, h3, h4, h5, h6, strong{
 
 }
 p, li, span, label, input, textarea{
-  color: var(--mainText);
+  color: #a4c8ea;
   font-family: 'Roboto Mono', monospace;
 }
 a{
@@ -219,6 +219,26 @@ h6{ font-size: 16px;}
 		}
 	}
 }
+.checkbox-inline{
+	margin-top: 25px;
+	margin-bottom: 25px;
+	padding-top: 5px;
+	padding-right: 10px;
+	// padding-left: 10px;
+	letter-spacing: -1px;
+	text-transform: uppercase;
+	font-weight: bold;
+
+}
+.input_checkbox{
+	// background-color: var(--mainText);
+	font-size: 15px;
+	
+
+}
+.checkbox{
+	background-color: $red;
+}
 .badge {
 	background-color: var(--mainColor);
 	letter-spacing: -1px;
@@ -232,7 +252,7 @@ h6{ font-size: 16px;}
 	width: 100%;
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: var(--secondaryColor);
+  background-color: var(--secondaryText);
   border-radius: 5px;
   border: 1px solid var(--borderColor);
 	font-size: 14px;

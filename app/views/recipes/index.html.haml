@@ -1,6 +1,8 @@
 = render "layouts/categories" 
-%h1 Recipe Management System
-= will_paginate @recipies, renderer: BootstrapPagination::Rails
+.col-md-10.col-sm-offset-2
+    %h1 Recipe Management System
+.col-md-6.col-sm-offset-4
+    = will_paginate @recipies, renderer: BootstrapPagination::Rails
 - @recipes.each_slice(3) do |recipe|
     .row
         - recipe.each do |rec|
