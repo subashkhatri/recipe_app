@@ -5,11 +5,12 @@ class CreateCategoriesTest < ActionDispatch::IntegrationTest
     get new_category_path
     assert_template 'categories/new'
     assert_difference 'Category.count', 1 do
-      post_via_redirect categories_path, category: { name: 'spices' }
+      post_via_redirect categories_path, category: { name: 'spicie' }
     end
     assert_template 'categories/index'
-    assert_match 'spices', response.body
+    assert_match 'spicie', response.body
   end
+
   test 'Invalid category submission in failure' do
     get new_category_path
     assert_template 'categories/new'

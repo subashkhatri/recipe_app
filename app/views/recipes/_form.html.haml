@@ -25,5 +25,6 @@
             .col-sm-offset-2.col-sm-8
                 = f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb|
                     - cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class: "checkbox") + cb.text}            
-        .form-button
-            = f.button :submit, class: 'btn- btn-primary' 
+        .col-md-8.col-md-offset-3
+            .form-button
+                = f.button :submit, class: 'btn btn-md btn-primary' 
