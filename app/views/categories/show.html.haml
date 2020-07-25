@@ -1,10 +1,10 @@
 = render "layouts/categories"
 .main_content
 	#recipe_top.row
-		.col-md-8
+		.col-md-11
 			#recipe_info
 				%h1= @category.name
-				- @category_recipes.each_slice(2) do |recipe|
+				- @category_recipes.each_slice(3) do |recipe|
 					.row
 						- recipe.each do |rec|
 							.col-md-4
@@ -15,6 +15,6 @@
 									%h2= link_to rec.title, rec 		
 	.row
 		.col-md-2
-		- if user_signed_in? && current_user.admin? 
 			= link_to "Back", root_path, class: "btn btn-info"
+		- if user_signed_in? && current_user.admin?			
 			= link_to "Edit", edit_category_path, class: "btn btn-primary"

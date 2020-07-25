@@ -46,7 +46,7 @@
 	%br/		
 	.row
 		.col-md-12
-			= link_to "Back", root_path, class: "btn btn-info"
+			= link_to "Back", recipes_path, class: "btn btn-info"
 			- if user_signed_in? && (current_user == @recipe.user || current_user.admin?) 
 				= link_to "Edit", edit_recipe_path, class: "btn btn-primary"
 				= link_to "Delete", recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-danger"
