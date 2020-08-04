@@ -1,0 +1,4 @@
+.btn-group
+  .col-md-12.col-sm-offset-1
+    - Category.all.each do |category|
+      %button= link_to "#{category.name}", category_path(category), class:"btn btn-lg"   
